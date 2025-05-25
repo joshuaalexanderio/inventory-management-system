@@ -4,7 +4,7 @@
 
 #### C.  Customize the HTML user interface for your customer’s application. The user interface should include the shop name, the product names, and the names of the parts.
 ###### Note: Do not remove any elements that were included in the screen. You may add any additional elements you would like or any images, colors, and styles, although it is not required.
->`mainscreen.html | lines 14 & 19 -> change title tag and h1 to "Josh's Tennis Shop" `
+>`mainscreen.html: lines 14,19 -> change title tag and h1 to "Josh's Tennis Shop" `
 #### D.  Add an “About” page to the application to describe your chosen customer’s company to web viewers and include navigation to and from the “About” page and the main screen.
 
 

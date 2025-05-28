@@ -52,7 +52,7 @@ public class AddPartController {
         return formtype;
     }
 
-    @GetMapping("/deletepart")
+    @GetMapping("/deletePart")
     public String deletePart(@Valid @RequestParam("partID") int theId,  Model theModel){
         PartService repo = context.getBean(PartServiceImpl.class);
         Part part=repo.findById(theId);

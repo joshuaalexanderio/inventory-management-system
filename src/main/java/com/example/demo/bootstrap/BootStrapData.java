@@ -43,20 +43,31 @@ public class BootStrapData implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+        /* Start parts */
         OutsourcedPart PA98= new OutsourcedPart();
         OutsourcedPart EZ98= new OutsourcedPart();
         OutsourcedPart ReStringZero= new OutsourcedPart();
         OutsourcedPart SuperGrap= new OutsourcedPart();
         InhousePart RacketBag = new InhousePart();
-        if (outsourcedPartRepository.count() == 0) {
+
+        /* Start Products */
+        Product PA98Setup = new Product();
+        Product EZ98Setup = new Product();
+        Product PA98SetupWithRacketBag = new Product();
+        Product EZ98SetupWithRacketBag = new Product();
+        Product StringGripCombo = new Product();
+
+        /* Start parts */
+
+        if (outsourcedPartRepository.count() == 0 && inhousePartRepository.count() == 0 && partRepository.count() == 0) {
             PA98.setCompanyName("Babolat");
-            PA98.setName("Pure Aero 98");
+            PA98.setName("Babolat Pure Aero 98");
             PA98.setInv(5);
             PA98.setPrice(289.99);
             outsourcedPartRepository.save(PA98);
 
             EZ98.setCompanyName("Yonex");
-            EZ98.setName("EZONE 98");
+            EZ98.setName("Yonex EZONE 98");
             EZ98.setInv(5);
             EZ98.setPrice(304.99);
             outsourcedPartRepository.save(EZ98);
@@ -76,8 +87,35 @@ public class BootStrapData implements CommandLineRunner {
             RacketBag.setName("Racket Bag");
             RacketBag.setInv(5);
             RacketBag.setPrice(44.99);
+            inhousePartRepository.save(RacketBag);
 
+            /* Start Products */
+            PA98Setup.setName("Babolat Pure Aero 98 Setup");
+            PA98Setup.setInv(5);
+            PA98Setup.setPrice(PA98.getPrice() + ReStringZero.getPrice() + SuperGrap.getPrice());
+            productRepository.save(PA98Setup);
 
+            EZ98Setup.setName("EZONE 98 Setup");
+            EZ98Setup.setInv(5);
+            EZ98Setup.setPrice(EZ98.getPrice() + ReStringZero.getPrice() + SuperGrap.getPrice());
+            productRepository.save(EZ98Setup);
+
+            PA98SetupWithRacketBag.setName("Babolat Pure Aero 98 Setup With Racket Bag");
+            PA98SetupWithRacketBag.setInv(5);
+            PA98SetupWithRacketBag.setPrice(PA98.getPrice() + ReStringZero.getPrice() + SuperGrap.getPrice() +
+                    RacketBag.getPrice());
+            productRepository.save(PA98SetupWithRacketBag);
+
+            EZ98SetupWithRacketBag.setName("Yonex EZONE 98 Setup With Racket Bag");
+            EZ98SetupWithRacketBag.setInv(5);
+            EZ98SetupWithRacketBag.setPrice(EZ98.getPrice() + ReStringZero.getPrice() + SuperGrap.getPrice() +
+                    RacketBag.getPrice());
+            productRepository.save(EZ98SetupWithRacketBag);
+
+            StringGripCombo.setName("String + Grip Combo");
+            StringGripCombo.setInv(5);
+            StringGripCombo.setPrice(ReStringZero.getPrice() + SuperGrap.getPrice() - 1);
+            productRepository.save(StringGripCombo);
 
 
         }
@@ -109,3 +147,4 @@ public class BootStrapData implements CommandLineRunner {
 
     }
 }
+

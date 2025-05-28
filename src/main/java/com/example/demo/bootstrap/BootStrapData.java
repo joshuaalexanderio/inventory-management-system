@@ -2,21 +2,15 @@ package com.example.demo.bootstrap;
 
 import com.example.demo.domain.InhousePart;
 import com.example.demo.domain.OutsourcedPart;
-import com.example.demo.domain.Part;
 import com.example.demo.domain.Product;
 import com.example.demo.repositories.InhousePartRepository;
 import com.example.demo.repositories.OutsourcedPartRepository;
 import com.example.demo.repositories.PartRepository;
 import com.example.demo.repositories.ProductRepository;
-import com.example.demo.service.OutsourcedPartService;
-import com.example.demo.service.OutsourcedPartServiceImpl;
-import com.example.demo.service.ProductService;
-import com.example.demo.service.ProductServiceImpl;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-
 import java.util.List;
-import java.util.Optional;
+
 
 /**
  *
@@ -33,7 +27,9 @@ public class BootStrapData implements CommandLineRunner {
     private final InhousePartRepository inhousePartRepository;
     private final OutsourcedPartRepository outsourcedPartRepository;
 
-    public BootStrapData(PartRepository partRepository, ProductRepository productRepository, OutsourcedPartRepository outsourcedPartRepository, InhousePartRepository inhousePartRepository) {
+    public BootStrapData(PartRepository partRepository, ProductRepository productRepository,
+                         OutsourcedPartRepository outsourcedPartRepository,
+                         InhousePartRepository inhousePartRepository) {
         this.partRepository = partRepository;
         this.productRepository = productRepository;
         this.outsourcedPartRepository=outsourcedPartRepository;
@@ -59,7 +55,8 @@ public class BootStrapData implements CommandLineRunner {
 
         /* Start parts */
 
-        if (outsourcedPartRepository.count() == 0 && inhousePartRepository.count() == 0 && partRepository.count() == 0) {
+        if (outsourcedPartRepository.count() == 0 && inhousePartRepository.count() == 0
+                && partRepository.count() == 0 && productRepository.count() == 0) {
             PA98.setCompanyName("Babolat");
             PA98.setName("Babolat Pure Aero 98");
             PA98.setInv(5);

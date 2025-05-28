@@ -10,7 +10,7 @@
 `about.html: lines 18-22 -> added header and paragraph describing company, added inline styles`
 `about.html: lines 19-25 -> created nav bar and wrapped nav and h1 in header tag`
 `mainscreen.html: lines 18-25 -> created nav bar and wrapped nav and h1 in header tag `
-
+`AboutController: created class and added URL mapping returning template`
 #### E.  Add a sample inventory appropriate for your chosen store to the application. You should have five parts and five products in your sample inventory and should not overwrite existing data in the database.
 
 

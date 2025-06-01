@@ -7,8 +7,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-<input type="number" th:field="*{inv}" class="form-control" />
-<div th:if="${#fields.hasErrors('inv')}" th:errors="*{inv}" class="text-danger"></div>
+
 <h1>Inhouse Part Detail</h1>
 <form action="#" th:action="@{/showFormAddInPart}" th:object="${inhousepart}" method="POST"}>
 

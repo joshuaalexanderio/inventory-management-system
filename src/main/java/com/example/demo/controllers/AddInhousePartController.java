@@ -39,6 +39,14 @@ public class AddInhousePartController{
     @PostMapping("/showFormAddInPart")
     public String submitForm(@Valid @ModelAttribute("inhousepart") InhousePart part, BindingResult theBindingResult, Model theModel){
         theModel.addAttribute("inhousepart",part);
+
+        if(!part.isValidInv()) {
+            theBindingResult.rejectValue("inv",
+                    "invalid.inv",
+                    "Inv must be be between Min and Max values"
+            );
+        }
+
         if(theBindingResult.hasErrors()){
             return "InhousePartForm";
         }

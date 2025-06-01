@@ -61,29 +61,39 @@ public class BootStrapData implements CommandLineRunner {
             PA98.setName("Babolat Pure Aero 98");
             PA98.setInv(5);
             PA98.setPrice(289.99);
+            PA98.setMinInv(1);
+            PA98.setMaxInv(5);
             outsourcedPartRepository.save(PA98);
 
             EZ98.setCompanyName("Yonex");
             EZ98.setName("Yonex EZONE 98");
             EZ98.setInv(5);
             EZ98.setPrice(304.99);
+            EZ98.setMinInv(1);
+            EZ98.setMaxInv(5);
             outsourcedPartRepository.save(EZ98);
 
             ReStringZero.setCompanyName("ReString");
             ReStringZero.setName("ReString Zero Tennis String Set");
             ReStringZero.setInv(5);
             ReStringZero.setPrice(14.00);
+            ReStringZero.setMinInv(1);
+            ReStringZero.setMaxInv(5);
             outsourcedPartRepository.save(ReStringZero);
 
             SuperGrap.setCompanyName("Yonex");
             SuperGrap.setName("Yonex Super Grap Overgrip");
             SuperGrap.setInv(5);
             SuperGrap.setPrice(8.00);
+            SuperGrap.setMinInv(1);
+            SuperGrap.setMaxInv(5);
             outsourcedPartRepository.save(SuperGrap);
 
             RacketBag.setName("Racket Bag");
             RacketBag.setInv(5);
             RacketBag.setPrice(44.99);
+            RacketBag.setMinInv(1);
+            RacketBag.setMaxInv(5);
             inhousePartRepository.save(RacketBag);
 
             /* Start Products */

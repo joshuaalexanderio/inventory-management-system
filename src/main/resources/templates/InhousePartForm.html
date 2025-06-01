@@ -7,6 +7,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
+<input type="number" th:field="*{inv}" class="form-control" />
+<div th:if="${#fields.hasErrors('inv')}" th:errors="*{inv}" class="text-danger"></div>
 <h1>Inhouse Part Detail</h1>
 <form action="#" th:action="@{/showFormAddInPart}" th:object="${inhousepart}" method="POST"}>
 
@@ -20,6 +22,12 @@
 
 <p><input type="text" path="inv" th:field="*{inv}" placeholder="Inventory" class="form-control mb-4 col-4"/></p>
     <p th:if="${#fields.hasErrors('inv')}" th:errors="*{inv}">Inventory Error</p>
+
+    <p><input type="text" path="inv" th:field="*{minInv}" placeholder="Min Inventory" class="form-control mb-4 col-4"/></p>
+    <p th:if="${#fields.hasErrors('minInv')}" th:errors="*{minInv}">Min Inventory Error</p>
+
+    <p><input type="text" path="inv" th:field="*{maxInv}" placeholder="Max Inventory" class="form-control mb-4 col-4"/></p>
+    <p th:if="${#fields.hasErrors('maxInv')}" th:errors="*{maxInv}">Max Inventory Error</p>
 
     <p><input type="text" th:field="*{partId}" placeholder="Part ID" class="form-control mb-4 col-4"/></p>
 

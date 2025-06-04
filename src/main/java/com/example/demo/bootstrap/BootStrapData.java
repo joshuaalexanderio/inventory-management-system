@@ -53,7 +53,7 @@ public class BootStrapData implements CommandLineRunner {
         Product EZ98SetupWithRacketBag = new Product();
         Product StringGripCombo = new Product();
 
-        /* Start parts */
+        /* Start parts initialization */
 
         if (outsourcedPartRepository.count() == 0 && inhousePartRepository.count() == 0
                 && partRepository.count() == 0 && productRepository.count() == 0) {
@@ -96,7 +96,7 @@ public class BootStrapData implements CommandLineRunner {
             RacketBag.setMaxInv(5);
             inhousePartRepository.save(RacketBag);
 
-            /* Start Products */
+            /* Start products initialization */
             PA98Setup.setName("Babolat Pure Aero 98 Setup");
             PA98Setup.setInv(5);
             PA98Setup.setPrice(PA98.getPrice() + ReStringZero.getPrice() + SuperGrap.getPrice());

@@ -77,17 +77,21 @@ public class AddProductController {
             if(product.getId()!=0) {
                 Product product2 = repo.findById((int) product.getId());
                 PartService partService1 = context.getBean(PartServiceImpl.class);
-                if(product.getInv()- product2.getInv()>0) {
+
+                if(product.getInv()- product2.getInv()>0) { // if inventory has increased
                     for (Part p : product2.getParts()) {
                         int inv = p.getInv();
-                        p.setInv(inv - (product.getInv() - product2.getInv()));
-                        partService1.save(p);
+                        p.setInv(inv - (product.getInv() - product2.getInv())); // Reduce inventory of associated parts
+                        partService1.save(p);                                  // for increased inventory
                     }
                 }
             }
             else{
                 product.setInv(0);
             }
+//            if (!product.isValidInv()) {
+//                return "redirect:/showFormAddProduct";
+//            }
             repo.save(product);
             return "confirmationaddproduct";
         }
@@ -134,8 +138,8 @@ public class AddProductController {
 
     @GetMapping("/associatepart")
     public String associatePart(@Valid @RequestParam("partID") int theID, Model theModel){
-    //    theModel.addAttribute("product", product);
-    //    Product product1=new Product();
+//        theModel.addAttribute("product", product);
+//        Product product1=new Product();
         if (product1.getName()==null) {
             return "saveproductscreen";
         }

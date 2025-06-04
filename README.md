@@ -49,26 +49,32 @@
 2.  Modify the sample inventory to include the maximum and minimum fields.
     >***BootStrapData:*** 64-65, 72-73, 80-81, 88-89, 95-96 `->` Set Min and Max inventory for sample parts.  
 3.  Add to the InhousePartForm and OutsourcedPartForm forms additional text inputs for the inventory so the user can set the maximum and minimum values.  
->***
+>***InhousePartForm.html:*** 25-29 `->` Add text inputs for min and max inventory.
+>***OutsourcedPartForm.html:*** 25-32 `->` Add text inputs for min and max inventory.
+>***OutsourcedPartForm.html:*** 12 `->` Remove stray curly brace.
+>***OutsourcedPartForm.html:*** 31 `->` Supress false-negative(?) from `{companyName}` not resolving.
+
+
 4.  Rename the file the persistent storage is saved to.
+>***application.properties:*** 6 `->` Change the number in database name in the datasource URL.
 5. Modify the code to enforce that the inventory is between or at the minimum and maximum value.
     >***Part***: 113-115 `->` add isValidInv() method to be used in validation in controllers below.  
     >***AddInhousePartController, AddOutsourcedPartController:*** 43-49 -> added validation error to bindingResult  if inventory is outside range.    
 
 #### H.  Add validation for between or at the maximum and minimum fields. The validation must include the following:
 1. Display error messages for low inventory when adding and updating parts if the inventory is less than the minimum number of parts.  
-    >See G.5
+    >***See G.5***
 2. Display error messages for low inventory when adding and updating products lowers the part inventory below the minimum.
-    >***EnufPartsValidator:*** lines 35-41 `->` honestly it seems like the code here that was included from the starter code already successfully
-enforced this. However, I did go ahead and refactor by abstracting invDiff at line 35 and also changing logic to work when `product.getInv() < myProduct.getInv()`. 
-3. Display error messages when adding and updating parts if the inventory is greater than the maximum.
-    >See G.5
+    >***EnufPartsValidator:*** lines 35-41 `->` It seems that the code here that was included from the starter code already successfully
+enforced this. However, I did go ahead and refactor by abstracting invDiff at line 35 and also changing logic to work when `product.getInv() < myProduct.getInv()`.   
+3. Display error messages when adding and updating parts if the inventory is greater than the maximum.  
+    >***See G.5***
 
 
 #### I.  Add at least two unit tests for the maximum and minimum fields to the PartTest class in the test package.
-
+>***PartTest***: 160-177 `->` Add unit tests for maxInv and minInv getters and setters.  
 
 #### J.  Remove the class files for any unused validators in order to clean your code.
-
-
-#### K.  Demonstrate professional communication in the content and presentation of your submission.
+>***ValidDeletePart*** `->` DELETED.  
+>***DeletePartValidator*** `->` DELETED.  
+> ***Part*** `->` Remove ValidDeletePart annotation as it is unused.  

@@ -39,24 +39,26 @@ public class BootStrapData implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        /* Start parts */
-        OutsourcedPart PA98= new OutsourcedPart();
-        OutsourcedPart EZ98= new OutsourcedPart();
-        OutsourcedPart ReStringZero= new OutsourcedPart();
-        OutsourcedPart SuperGrap= new OutsourcedPart();
-        InhousePart RacketBag = new InhousePart();
 
-        /* Start Products */
-        Product PA98Setup = new Product();
-        Product EZ98Setup = new Product();
-        Product PA98SetupWithRacketBag = new Product();
-        Product EZ98SetupWithRacketBag = new Product();
-        Product StringGripCombo = new Product();
 
-        /* Start parts initialization */
 
         if (outsourcedPartRepository.count() == 0 && inhousePartRepository.count() == 0
                 && partRepository.count() == 0 && productRepository.count() == 0) {
+            /* Start parts */
+            OutsourcedPart PA98= new OutsourcedPart();
+            OutsourcedPart EZ98= new OutsourcedPart();
+            OutsourcedPart ReStringZero= new OutsourcedPart();
+            OutsourcedPart SuperGrap= new OutsourcedPart();
+            InhousePart RacketBag = new InhousePart();
+
+            /* Start Products */
+            Product PA98Setup = new Product();
+            Product EZ98Setup = new Product();
+            Product PA98SetupWithRacketBag = new Product();
+            Product EZ98SetupWithRacketBag = new Product();
+            Product StringGripCombo = new Product();
+
+            /* Start parts initialization */
             PA98.setCompanyName("Babolat");
             PA98.setName("Babolat Pure Aero 98");
             PA98.setInv(5);

@@ -104,4 +104,13 @@ public class Product implements Serializable {
     public int hashCode() {
         return (int) (id ^ (id >>> 32));
     }
+
+//    public boolean isValidInv() {
+//        for (Part p : this.getParts()) {
+//            if (p.getInv() > p.getMaxInv() || p.getInv() < p.getMinInv()) { // if any parts inv is outside max or min
+//                return false;
+//            }
+//        }
+//        return true;
+//    }
 }

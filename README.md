@@ -1,4 +1,4 @@
-### Changes from starter code listed below.
+### Changes from starter code listed below:
 
 > ### Formatting guide
 > 

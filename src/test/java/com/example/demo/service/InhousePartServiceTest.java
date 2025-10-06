@@ -13,17 +13,6 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-/**
- * Project: demo
- * Package: com.example.demo.service
- * <p>
- * User: carolyn.sher
- * Date: 5/3/2022
- * Time: 11:36 AM
- * <p>
- * Created with IntelliJ IDEA
- * To change this template use File | Settings | File Templates.
- */
 class InhousePartServiceTest {
     InhousePartRepository inhousePartRepository;
     InhousePartService inhousePartService;
